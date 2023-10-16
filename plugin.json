@@ -1,0 +1,23 @@
+{
+  "slug": "patina",
+  "name": "Patina",
+  "version": "0.1",
+  "license": "GPL-3.0-or-later",
+  "brand": "Patina",
+  "author": "Eugenio Padilla",
+  "authorEmail": "epadilla@gmail.com",
+  "authorUrl": "https://github.com/epadilla",
+  "pluginUrl": "https://github.com/epadilla/patina",
+  "manualUrl": "",
+  "sourceUrl": "https://github.com/epadilla/patina",
+  "donateUrl": "",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "MemoryPad",
+      "name": "Memory Pad",
+      "description": "",
+      "tags": ["Low-frequency oscillator", "Controller"]
+    }
+  ]
+}
