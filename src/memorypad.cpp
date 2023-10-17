@@ -47,7 +47,7 @@ struct MemoryPad : Module {
     configParam(TRACKPAD_X_PARAM, 0.f, 1.f, 0.f, "");
     configParam(TRACKPAD_Y_PARAM, 0.f, 1.f, 0.f, "");
     configSwitch(PATH_DIRECTION_PARAM, 0.0, 2.0, 0.0, "Path Direction", {"Fwd", "InOut", "Rev"});
-    configParam(SPEED_PARAM, 0.1f, 5.f, 1.f, "Speed");
+    configParam(SPEED_PARAM, 0.1f, 5.f, 1.f, "Speed Multiplier");
     configSwitch(X_POLARITY_PARAM, 0.f, 1.f, 0.f, "X Polarity", {"Unipolar", "Bipolar"});
     configSwitch(Y_POLARITY_PARAM, 0.f, 1.f, 0.f, "Y Polarity", {"Unipolar", "Bipolar"});
     configParam(X_ATTN_PARAM, 0.f, 1.f, 1.f, "X Attenuation");

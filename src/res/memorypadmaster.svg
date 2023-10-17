@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50.799999mm"
+   height="128.5mm"
+   viewBox="0 0 50.799999 128.5"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486, 2022-12-01)"
+   sodipodi:docname="memorypadmaster.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.9054175"
+     inkscape:cx="-84.491409"
+     inkscape:cy="220.89257"
+     inkscape:window-width="1512"
+     inkscape:window-height="916"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5580">
+      <stop
+         style="stop-color:#323232;stop-opacity:1;"
+         offset="0"
+         id="stop5576" />
+      <stop
+         style="stop-color:#111111;stop-opacity:1;"
+         offset="1"
+         id="stop5578" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5580"
+       id="radialGradient5582"
+       cx="25.4"
+       cy="45.879999"
+       fx="25.4"
+       fy="45.879999"
+       r="23"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       id="filter0_d_62_1219"
+       x="2.23982"
+       y="22.719999"
+       width="46.559898"
+       height="46.560001"
+       filterUnits="userSpaceOnUse"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity="0"
+         result="BackgroundImageFix"
+         id="feFlood308" />
+      <feColorMatrix
+         in="SourceAlpha"
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+         result="hardAlpha"
+         id="feColorMatrix310" />
+      <feOffset
+         dy="0.08"
+         id="feOffset312" />
+      <feGaussianBlur
+         stdDeviation="0.04"
+         id="feGaussianBlur314" />
+      <feComposite
+         in2="hardAlpha"
+         operator="out"
+         id="feComposite316" />
+      <feColorMatrix
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+         id="feColorMatrix318" />
+      <feBlend
+         mode="normal"
+         in2="BackgroundImageFix"
+         result="effect1_dropShadow_62_1219"
+         id="feBlend320" />
+      <feBlend
+         mode="normal"
+         in="SourceGraphic"
+         in2="effect1_dropShadow_62_1219"
+         result="shape"
+         id="feBlend322" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#dcdcdc;stroke-width:0.465;stop-color:#000000"
+       id="rect983"
+       width="50.799999"
+       height="128.5"
+       x="0"
+       y="0"
+       inkscape:label="BG" />
+    <rect
+       style="fill:url(#radialGradient5582);fill-opacity:1;stroke-width:0.465;stop-color:#000000"
+       id="rect4018"
+       width="46"
+       height="46"
+       x="2.3999996"
+       y="22.879999"
+       rx="4"
+       inkscape:label="Pad BG" />
+    <rect
+       style="fill:#262626;fill-opacity:1;stroke-width:0.465;stop-color:#000000"
+       id="rect11412"
+       width="16"
+       height="18"
+       x="6"
+       y="101"
+       rx="3"
+       inkscape:label="X Out BG" />
+    <rect
+       style="fill:#262626;fill-opacity:1;stroke-width:0.465;stop-color:#000000"
+       id="rect15046"
+       width="16"
+       height="18"
+       x="29"
+       y="101"
+       rx="3"
+       inkscape:label="Y Out BG" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';letter-spacing:0.264583px;fill:#262626;fill-opacity:1;stroke-width:0.465;stop-color:#000000;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal"
+       x="32.683681"
+       y="20.019033"
+       id="text18020"
+       inkscape:label="SPEED"><tspan
+         sodipodi:role="line"
+         id="tspan18018"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';stroke-width:0.465"
+         x="32.683681"
+         y="20.019033">SPEED</tspan></text>
+    <rect
+       style="fill:#b1b1b1;fill-opacity:1;stroke-width:0.465;stop-color:#000000"
+       id="rect28032"
+       width="0.16"
+       height="36"
+       x="25.32"
+       y="79.81015"
+       inkscape:label="Separator" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Bold';text-align:center;letter-spacing:0.264583px;text-anchor:middle;fill:#262626;fill-opacity:1;stroke-width:0.465;stop-color:#000000"
+       x="25.405586"
+       y="125.96817"
+       id="text30214"
+       inkscape:label="MEMORYPAD"><tspan
+         sodipodi:role="line"
+         id="tspan30212"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Bold';text-align:center;text-anchor:middle;stroke-width:0.465"
+         x="25.537878"
+         y="125.96817">MEMORY PAD</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';letter-spacing:0.264583px;fill:#262626;fill-opacity:1;stroke-width:0.465;stop-color:#000000;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal"
+       x="31.168015"
+       y="82.158005"
+       id="text30337"
+       inkscape:label="Y BIPOLAR"><tspan
+         sodipodi:role="line"
+         id="tspan30335"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';stroke-width:0.465"
+         x="31.168015"
+         y="82.158005">BIPOLAR</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';letter-spacing:0.264583px;fill:#262626;fill-opacity:1;stroke-width:0.465;stop-color:#000000;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal"
+       x="29.147509"
+       y="98.133202"
+       id="text31130"
+       inkscape:label="Y ATTN"><tspan
+         sodipodi:role="line"
+         id="tspan31128"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';stroke-width:0.465"
+         x="29.147509"
+         y="98.133202">ATTENUATE</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';letter-spacing:0.264583px;fill:#ffffff;fill-opacity:1;stroke-width:0.465;stop-color:#000000;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal"
+       x="35.866562"
+       y="116.93607"
+       id="text31134"
+       inkscape:label="Y"><tspan
+         sodipodi:role="line"
+         id="tspan31132"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:4.93889px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.465"
+         x="35.866562"
+         y="116.93607">Y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';letter-spacing:0.264583px;fill:#262626;fill-opacity:1;stroke-width:0.465;stop-color:#000000;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal"
+       x="7.9680142"
+       y="82.158005"
+       id="text31553"
+       inkscape:label="Y BIPOLAR"><tspan
+         sodipodi:role="line"
+         id="tspan31551"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';stroke-width:0.465"
+         x="7.9680142"
+         y="82.158005">BIPOLAR</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';letter-spacing:0.264583px;fill:#262626;fill-opacity:1;stroke-width:0.465;stop-color:#000000;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal"
+       x="5.9475098"
+       y="98.133202"
+       id="text31557"
+       inkscape:label="Y ATTN"><tspan
+         sodipodi:role="line"
+         id="tspan31555"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';stroke-width:0.465"
+         x="5.9475098"
+         y="98.133202">ATTENUATE</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:4.93889px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';letter-spacing:0.264583px;fill:#ffffff;fill-opacity:1;stroke-width:0.465;stop-color:#000000"
+       x="12.820744"
+       y="116.92314"
+       id="text31561"
+       inkscape:label="Y"><tspan
+         sodipodi:role="line"
+         id="tspan31559"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:4.93889px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.465"
+         x="12.820744"
+         y="116.92314">X</tspan></text>
+    <g
+       id="g34051"
+       transform="translate(-0.33119032,-0.11790784)"
+       inkscape:label="arrows">
+      <text
+         xml:space="preserve"
+         style="font-size:3.88056px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';letter-spacing:0.264583px;fill:#262626;fill-opacity:1;stroke-width:0.465;stop-color:#000000;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal"
+         x="6.8671141"
+         y="20.377409"
+         id="text32821"
+         inkscape:label="fwd"><tspan
+           sodipodi:role="line"
+           id="tspan32819"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.88056px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';stroke-width:0.465"
+           x="6.8671141"
+           y="20.377409">→</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:3.88056px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';letter-spacing:0.264583px;fill:#262626;fill-opacity:1;stroke-width:0.465;stop-color:#000000;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal"
+         x="18.503195"
+         y="20.377409"
+         id="text32825"
+         inkscape:label="rev"><tspan
+           sodipodi:role="line"
+           id="tspan32823"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.88056px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';stroke-width:0.465"
+           x="18.503195"
+           y="20.377409">←</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:3.88056px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';letter-spacing:0.264583px;fill:#262626;fill-opacity:1;stroke-width:0.465;stop-color:#000000;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal"
+         x="12.619267"
+         y="20.375084"
+         id="text32829"
+         inkscape:label="SPEED"><tspan
+           sodipodi:role="line"
+           id="tspan32827"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.88056px;font-family:'SF Compact Rounded';-inkscape-font-specification:'SF Compact Rounded Semi-Bold';stroke-width:0.465"
+           x="12.619267"
+           y="20.375084">↔</tspan></text>
+    </g>
+    <g
+       id="Guides"
+       filter="url(#filter0_d_62_1219)"
+       style="display:inline;stroke-width:0.0699979"
+       clip-path="none"
+       transform="matrix(1.0000458,0,0,1.0000458,-0.08009396,-0.0421031)">
+      <g
+         id="Hor Guide"
+         style="display:inline;stroke-width:0.264571">
+        <rect
+           id="Bar"
+           x="2.47998"
+           y="45.759998"
+           width="45.997894"
+           height="0.31999999"
+           fill="#454545"
+           style="stroke-width:0.069998" />
+        <g
+           id="Ticks"
+           style="stroke-width:0.264571">
+          <rect
+             id="Rectangle 15"
+             x="2.3198199"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="display:none;stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 17"
+             x="5.1997099"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 18"
+             x="8.0795898"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 19"
+             x="10.96"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 20"
+             x="13.8398"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 21"
+             x="16.7197"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 22"
+             x="19.5996"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 23"
+             x="22.48"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 24"
+             x="25.3599"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 25"
+             x="28.2397"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 26"
+             x="31.1196"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 27"
+             x="34"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 28"
+             x="36.879902"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 29"
+             x="39.7598"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 30"
+             x="42.639599"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 31"
+             x="45.52"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 16"
+             x="48.399899"
+             y="45.279999"
+             width="0.31999999"
+             height="1.28"
+             rx="0.16"
+             fill="#454545"
+             style="display:none;stroke-width:0.0699979" />
+        </g>
+      </g>
+      <g
+         id="Ver Guide"
+         style="display:inline;stroke-width:0.264571">
+        <rect
+           id="Bar_2"
+           x="25.3599"
+           y="22.921053"
+           width="0.31999999"
+           height="45.997894"
+           fill="#454545"
+           style="stroke-width:0.0699979" />
+        <g
+           id="Ticks_2"
+           style="stroke-width:0.264571">
+          <rect
+             id="Rectangle 4"
+             x="24.8799"
+             y="22.719999"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="display:none;stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 10"
+             x="24.8799"
+             y="25.6"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 11"
+             x="24.8799"
+             y="28.48"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 12"
+             x="24.8799"
+             y="31.360001"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 13"
+             x="24.8799"
+             y="34.240002"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 14"
+             x="24.8799"
+             y="37.119999"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 15_2"
+             x="24.8799"
+             y="40"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 16_2"
+             x="24.8799"
+             y="42.880001"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 17_2"
+             x="24.8799"
+             y="45.759998"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 18_2"
+             x="24.8799"
+             y="48.639999"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 19_2"
+             x="24.8799"
+             y="51.52"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 20_2"
+             x="24.8799"
+             y="54.400002"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 6"
+             x="24.8799"
+             y="57.279999"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 7"
+             x="24.8799"
+             y="60.16"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 8"
+             x="24.8799"
+             y="63.040001"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 9"
+             x="24.8799"
+             y="65.919998"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="stroke-width:0.0699979" />
+          <rect
+             id="Rectangle 5"
+             x="24.8799"
+             y="68.800003"
+             width="1.28"
+             height="0.31999999"
+             rx="0.16"
+             fill="#454545"
+             style="display:none;stroke-width:0.0699979" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
