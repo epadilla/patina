@@ -16,8 +16,11 @@
     {
       "slug": "MemoryPad",
       "name": "Memory Pad",
-      "description": "",
-      "tags": ["Low-frequency oscillator", "Controller"]
+      "description": "Interactive X-Y pad that records and repeats path drawn on touchpad. Can be used to modulate any parameter as a custom-drawn LFO with 2 outputs. Outputs can be set to bipolar or unipolar values and attenuated. Drag with the mouse on the touchpad to record a path.",
+      "tags": [
+        "Low-frequency oscillator",
+        "Controller"
+      ]
     }
   ]
 }
