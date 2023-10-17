@@ -28,15 +28,16 @@ struct MemoryPad : Module {
     LIGHTS_LEN
   };
 
-  bool isRecording;
-  std::vector<Vec> recordedPath;
-  unsigned long lastPathIndex = 0;
-  int pathBaseSampleRate = 60;
-  int64_t lastPathFrame = 0;
-  float lastSpeedMultiplier = 0;
-  bool currPathDirectionFwd = true;
+  const int pathBaseSampleRate = 60;
   const char* RECORDED_X_PATH_KEY = "RECORDED_X_PATH_KEY";
   const char* RECORDED_Y_PATH_KEY = "RECORDED_Y_PATH_KEY";
+
+  bool _isRecording;
+  std::vector<Vec> _recordedPath;
+  unsigned long _lastPathIndex = 0;
+  int64_t _lastPathFrame = 0;
+  float _lastSpeedMultiplier = 0;
+  bool _currPathDirectionFwd = true;
 
   MemoryPad() {
     config(PARAMS_LEN, INPUTS_LEN, OUTPUTS_LEN, LIGHTS_LEN);
@@ -56,7 +57,7 @@ struct MemoryPad : Module {
     lights[X_POLARITY_LIGHT].setBrightness(params[X_POLARITY_PARAM].getValue() > 0.f);
     lights[Y_POLARITY_LIGHT].setBrightness(params[Y_POLARITY_PARAM].getValue() > 0.f);
 
-    if (isRecording || recordedPath.empty()) {
+    if (_isRecording || _recordedPath.empty()) {
       _setXYOutputs(params[TRACKPAD_X_PARAM].getValue(), params[TRACKPAD_Y_PARAM].getValue());
       return;
     }
@@ -66,49 +67,49 @@ struct MemoryPad : Module {
     float speedMultiplier = params[SPEED_PARAM].getValue();
     int pathFrame = currentTime * pathBaseSampleRate * speedMultiplier;
 
-    if (speedMultiplier != lastSpeedMultiplier) {
-      lastSpeedMultiplier = speedMultiplier;
-      lastPathFrame = 0;
+    if (speedMultiplier != _lastSpeedMultiplier) {
+      _lastSpeedMultiplier = speedMultiplier;
+      _lastPathFrame = 0;
       return;
     }
 
-    if (pathFrame <= lastPathFrame) {
+    if (pathFrame <= _lastPathFrame) {
       return;
     }
 
-    lastPathFrame = pathFrame;
+    _lastPathFrame = pathFrame;
 
     float pathDirection = params[PATH_DIRECTION_PARAM].getValue();
 
     if (pathDirection == 0.f) {  // Fwd
-      currPathDirectionFwd = true;
-      lastPathIndex++;
-      if (lastPathIndex >= recordedPath.size()) {
-        lastPathIndex = 0;
+      _currPathDirectionFwd = true;
+      _lastPathIndex++;
+      if (_lastPathIndex >= _recordedPath.size()) {
+        _lastPathIndex = 0;
       }
     } else if (pathDirection == 1.f) {  // InOut
-      if (lastPathIndex == 0) {
-        currPathDirectionFwd = true;
-      } else if (lastPathIndex == recordedPath.size() - 1) {
-        currPathDirectionFwd = false;
+      if (_lastPathIndex == 0) {
+        _currPathDirectionFwd = true;
+      } else if (_lastPathIndex == _recordedPath.size() - 1) {
+        _currPathDirectionFwd = false;
       }
 
-      lastPathIndex += (currPathDirectionFwd) ? 1 : -1;
+      _lastPathIndex += (_currPathDirectionFwd) ? 1 : -1;
 
-      if (lastPathIndex < 0) {
-        lastPathIndex = 0;
-      } else if (lastPathIndex >= recordedPath.size()) {
-        lastPathIndex = recordedPath.size();
+      if (_lastPathIndex < 0) {
+        _lastPathIndex = 0;
+      } else if (_lastPathIndex >= _recordedPath.size()) {
+        _lastPathIndex = _recordedPath.size();
       }
     } else if (pathDirection == 2.f) {  // Rev
-      currPathDirectionFwd = false;
-      if (lastPathIndex == 0) {
-        lastPathIndex = recordedPath.size();
+      _currPathDirectionFwd = false;
+      if (_lastPathIndex == 0) {
+        _lastPathIndex = _recordedPath.size();
       }
-      lastPathIndex--;
+      _lastPathIndex--;
     }
 
-    Vec values = recordedPath[lastPathIndex];
+    Vec values = _recordedPath[_lastPathIndex];
     _setXYOutputs(values.x, values.y);
   }
 
@@ -140,9 +141,9 @@ struct MemoryPad : Module {
     json_t* jXArray = json_array();
     json_t* jYArray = json_array();
 
-    for (size_t i = 0; i < recordedPath.size(); i++) {
-      json_array_append_new(jXArray, json_real(recordedPath[i].x));
-      json_array_append_new(jYArray, json_real(recordedPath[i].y));
+    for (size_t i = 0; i < _recordedPath.size(); i++) {
+      json_array_append_new(jXArray, json_real(_recordedPath[i].x));
+      json_array_append_new(jYArray, json_real(_recordedPath[i].y));
     }
 
     json_object_set_new(root, RECORDED_X_PATH_KEY, jXArray);
@@ -159,7 +160,7 @@ struct MemoryPad : Module {
     size_t yArraySize = json_array_size(jYArray);
 
     if (xArraySize > 0 && xArraySize == yArraySize) {
-      recordedPath.clear();
+      _recordedPath.clear();
 
       size_t idx;
       json_t* xVal;
@@ -169,7 +170,7 @@ struct MemoryPad : Module {
         json_t* yVal = json_array_get(jYArray, idx);
         float y = json_number_value(yVal);
 
-        recordedPath.push_back(Vec(x, y));
+        _recordedPath.push_back(Vec(x, y));
       }
     }
   }
@@ -201,8 +202,8 @@ struct MemoryPadTrackpad : OpaqueWidget {
     OpaqueWidget::onDragStart(e);
 
     if (module) {
-      module->recordedPath.clear();
-      module->isRecording = true;
+      module->_recordedPath.clear();
+      module->_isRecording = true;
     }
   }
 
@@ -228,7 +229,7 @@ struct MemoryPadTrackpad : OpaqueWidget {
       }
 
       if (module) {
-        module->recordedPath.push_back(Vec(xPosIdx, yPosIdx));
+        module->_recordedPath.push_back(Vec(xPosIdx, yPosIdx));
       }
     }
   }
@@ -243,7 +244,7 @@ struct MemoryPadTrackpad : OpaqueWidget {
     OpaqueWidget::onDragEnd(e);
 
     if (module) {
-      module->isRecording = false;
+      module->_isRecording = false;
     }
   }
 
@@ -253,11 +254,11 @@ struct MemoryPadTrackpad : OpaqueWidget {
     float xParamValue = 0.5f;
     float yParamValue = 0.5f;
     if (module) {
-      if (module->isRecording) {
+      if (module->_isRecording) {
         xParamValue = (getXParamQuantity()) ? getXParamQuantity()->getValue() : 0.5f;
         yParamValue = (getYParamQuantity()) ? getYParamQuantity()->getValue() : 0.5f;
-      } else if (module->recordedPath.size() > module->lastPathIndex) {
-        Vec lastPoint = module->recordedPath[module->lastPathIndex];
+      } else if (module->_recordedPath.size() > module->_lastPathIndex) {
+        Vec lastPoint = module->_recordedPath[module->_lastPathIndex];
         xParamValue = lastPoint.x;
         yParamValue = lastPoint.y;
       }
