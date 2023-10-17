@@ -181,6 +181,7 @@ struct MemoryPad : Module {
 
 struct MemoryPadTrackpad : OpaqueWidget {
   const unsigned long TAIL_MAX_SIZE = 50;
+  const unsigned long RECORDED_PATH_MAX = 10000;
 
   MemoryPad* module = NULL;
   int _xParamId, _yParamId;
@@ -213,7 +214,12 @@ struct MemoryPadTrackpad : OpaqueWidget {
 
   void onDragHover(const DragHoverEvent& e) override {
     OpaqueWidget::onDragHover(e);
-    if (e.origin == this) {
+    if (e.origin == this && module->_isRecording) {
+      if (module->_recordedPath.size() > RECORDED_PATH_MAX) {
+        module->_isRecording = false;
+        return;
+      }
+
       Vec mousePos = e.pos;
 
       float xPosIdx = mousePos.x / box.size.x;
