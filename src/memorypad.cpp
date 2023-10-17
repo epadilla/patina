@@ -14,14 +14,17 @@ struct MemoryPad : Module {
     Y_ATTN_PARAM,
     PARAMS_LEN
   };
+
   enum InputId {
     INPUTS_LEN
   };
+
   enum OutputId {
     X_OUTPUT,
     Y_OUTPUT,
     OUTPUTS_LEN
   };
+
   enum LightId {
     X_POLARITY_LIGHT,
     Y_POLARITY_LIGHT,
