@@ -28,7 +28,7 @@ struct MemoryPad : Module {
     LIGHTS_LEN
   };
 
-  const int pathBaseSampleRate = 60;
+  const int PATH_BASE_SAMPLE_RATE = 60;
   const char* RECORDED_X_PATH_KEY = "RECORDED_X_PATH_KEY";
   const char* RECORDED_Y_PATH_KEY = "RECORDED_Y_PATH_KEY";
 
@@ -65,7 +65,7 @@ struct MemoryPad : Module {
     float currentTime = args.sampleTime * args.frame;
 
     float speedMultiplier = params[SPEED_PARAM].getValue();
-    int pathFrame = currentTime * pathBaseSampleRate * speedMultiplier;
+    int pathFrame = currentTime * PATH_BASE_SAMPLE_RATE * speedMultiplier;
 
     if (speedMultiplier != _lastSpeedMultiplier) {
       _lastSpeedMultiplier = speedMultiplier;
@@ -177,17 +177,18 @@ struct MemoryPad : Module {
 };
 
 struct MemoryPadTrackpad : OpaqueWidget {
-  int xParamId, yParamId;
+  const unsigned long TAIL_MAX_SIZE = 50;
+
   MemoryPad* module = NULL;
-  std::deque<Vec> puckTail;
-  unsigned long tailMaxSize = 50;
+  int _xParamId, _yParamId;
+  std::deque<Vec> _puckTail;
 
   ParamQuantity* getXParamQuantity() {
     if (!module) {
       return NULL;
     }
 
-    return module->paramQuantities[xParamId];
+    return module->paramQuantities[_xParamId];
   }
 
   ParamQuantity* getYParamQuantity() {
@@ -195,7 +196,7 @@ struct MemoryPadTrackpad : OpaqueWidget {
       return NULL;
     }
 
-    return module->paramQuantities[yParamId];
+    return module->paramQuantities[_yParamId];
   }
 
   void onDragStart(const DragStartEvent& e) override {
@@ -269,10 +270,10 @@ struct MemoryPadTrackpad : OpaqueWidget {
     Vec puckDot = Vec(xPos, yPos);
 
     // Draw tail
-    for (unsigned long i = 0; i < puckTail.size(); ++i) {
-      float invProgress = 1.f - ((float)i / (float)(tailMaxSize - 1));
+    for (unsigned long i = 0; i < _puckTail.size(); ++i) {
+      float invProgress = 1.f - ((float)i / (float)(TAIL_MAX_SIZE - 1));
 
-      Vec pos = puckTail[i];
+      Vec pos = _puckTail[i];
 
       nvgScissor(args.vg, 0.f, 0.f, box.size.x, box.size.y);
       nvgBeginPath(args.vg);
@@ -282,9 +283,9 @@ struct MemoryPadTrackpad : OpaqueWidget {
       nvgFill(args.vg);
     }
 
-    puckTail.push_front(Vec(puckDot.x, puckDot.y));
-    if (puckTail.size() > tailMaxSize) {
-      puckTail.pop_back();
+    _puckTail.push_front(Vec(puckDot.x, puckDot.y));
+    if (_puckTail.size() > TAIL_MAX_SIZE) {
+      _puckTail.pop_back();
     }
 
     // Draw dot
@@ -322,8 +323,8 @@ struct MemoryPadWidget : ModuleWidget {
     MemoryPadTrackpad* trackpad = new MemoryPadTrackpad();
     trackpad->box.pos = mm2px(Vec(2.48, 22.88));
     trackpad->box.size = mm2px(Vec(46.08, 46.08));
-    trackpad->xParamId = MemoryPad::TRACKPAD_X_PARAM;
-    trackpad->yParamId = MemoryPad::TRACKPAD_Y_PARAM;
+    trackpad->_xParamId = MemoryPad::TRACKPAD_X_PARAM;
+    trackpad->_yParamId = MemoryPad::TRACKPAD_Y_PARAM;
     trackpad->module = module;
     addChild(trackpad);
   }
