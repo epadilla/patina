@@ -99,11 +99,6 @@ struct MemoryPad : Module {
 
       _lastPathIndex += (_currPathDirectionFwd) ? 1 : -1;
 
-      if (_lastPathIndex < 0) {
-        _lastPathIndex = 0;
-      } else if (_lastPathIndex >= _recordedPath.size()) {
-        _lastPathIndex = _recordedPath.size();
-      }
     } else if (pathDirection == 2.f) {  // Rev
       _currPathDirectionFwd = false;
       if (_lastPathIndex == 0) {
