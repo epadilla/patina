@@ -254,9 +254,9 @@ struct MemoryPadTrackpad : OpaqueWidget {
   }
 
   void drawLayer(const DrawArgs& args, int layer) override {
-    if (layer != 1 || !module) return;
-
-    OpaqueWidget::draw(args);
+    if (layer != 1 || !module) {
+      return;
+    }
 
     float xParamValue = 0.5f;
     float yParamValue = 0.5f;
