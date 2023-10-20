@@ -253,20 +253,20 @@ struct MemoryPadTrackpad : OpaqueWidget {
     }
   }
 
-  void draw(const DrawArgs& args) override {
+  void drawLayer(const DrawArgs& args, int layer) override {
+    if (layer != 1 || !module) return;
+
     OpaqueWidget::draw(args);
 
     float xParamValue = 0.5f;
     float yParamValue = 0.5f;
-    if (module) {
-      if (module->_isRecording) {
-        xParamValue = (getXParamQuantity()) ? getXParamQuantity()->getValue() : 0.5f;
-        yParamValue = (getYParamQuantity()) ? getYParamQuantity()->getValue() : 0.5f;
-      } else if (module->_recordedPath.size() > module->_lastPathIndex) {
-        Vec lastPoint = module->_recordedPath[module->_lastPathIndex];
-        xParamValue = lastPoint.x;
-        yParamValue = lastPoint.y;
-      }
+    if (module->_isRecording) {
+      xParamValue = (getXParamQuantity()) ? getXParamQuantity()->getValue() : 0.5f;
+      yParamValue = (getYParamQuantity()) ? getYParamQuantity()->getValue() : 0.5f;
+    } else if (module->_recordedPath.size() > module->_lastPathIndex) {
+      Vec lastPoint = module->_recordedPath[module->_lastPathIndex];
+      xParamValue = lastPoint.x;
+      yParamValue = lastPoint.y;
     }
 
     float xPos = xParamValue * box.size.x;
@@ -298,6 +298,8 @@ struct MemoryPadTrackpad : OpaqueWidget {
     nvgCircle(args.vg, puckDot.x, puckDot.y, 8.0);
     nvgFillColor(args.vg, SCHEME_YELLOW);
     nvgFill(args.vg);
+
+    Widget::drawLayer(args, layer);
   }
 };
 
