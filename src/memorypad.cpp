@@ -1,3 +1,4 @@
+#include <array>
 #include <deque>
 
 #include "plugin.hpp"
