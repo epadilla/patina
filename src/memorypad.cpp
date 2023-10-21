@@ -41,6 +41,27 @@ struct MemoryPad : Module {
   int64_t _lastPathFrame = 0;
   float _lastSpeedMultiplier = 0;
   bool _currPathDirectionFwd = true;
+  NVGcolor pathColor = SCHEME_YELLOW;
+
+  struct PathColors {
+    std::string color;
+    NVGcolor scheme;
+  };
+  const std::array<PathColors, 9> pathColors = {{
+    {"Yellow (default)", SCHEME_YELLOW},
+    {"White", SCHEME_WHITE},
+    {"Red", SCHEME_RED},
+    {"Orange", SCHEME_ORANGE},
+    {"Green", SCHEME_GREEN},
+    {"Cyan", SCHEME_CYAN},
+    {"Blue", SCHEME_BLUE},
+    {"Purple", SCHEME_PURPLE},
+    {"Light Gray", SCHEME_LIGHT_GRAY}
+  }};
+
+  bool isSameColor(NVGcolor const &c1, NVGcolor const &c2) {
+      return (c1.r == c2.r) && (c1.g == c2.g) && (c1.b == c2.b);
+  }
 
   MemoryPad() {
     config(PARAMS_LEN, INPUTS_LEN, OUTPUTS_LEN, LIGHTS_LEN);
@@ -147,6 +168,15 @@ struct MemoryPad : Module {
     json_object_set_new(root, RECORDED_X_PATH_KEY, jXArray);
     json_object_set_new(root, RECORDED_Y_PATH_KEY, jYArray);
 
+    int index {};
+    for(const auto& color : pathColors) {
+      if(isSameColor(pathColor, color.scheme)) {
+          break;
+      }
+      index++;
+    }
+    json_object_set_new(root, "CurrentColor", json_integer(index));
+
     return root;
   }
 
@@ -170,6 +200,10 @@ struct MemoryPad : Module {
 
         _recordedPath.push_back(Vec(x, y));
       }
+    }
+
+    if (json_t* color_idx = json_object_get(rootJ, "CurrentColor")) {
+      pathColor = pathColors[json_integer_value(color_idx)].scheme;
     }
   }
 };
@@ -282,7 +316,7 @@ struct MemoryPadTrackpad : OpaqueWidget {
       nvgScissor(args.vg, 0.f, 0.f, box.size.x, box.size.y);
       nvgBeginPath(args.vg);
       nvgCircle(args.vg, pos.x, pos.y, 8.0);
-      NVGpaint p = nvgRadialGradient(args.vg, pos.x, pos.y, 0.f, 8.f * invProgress, nvgTransRGBA(SCHEME_YELLOW, (unsigned char)255 * invProgress), nvgTransRGBAf(SCHEME_YELLOW, 0.f));
+      NVGpaint p = nvgRadialGradient(args.vg, pos.x, pos.y, 0.f, 8.f * invProgress, nvgTransRGBA(module->pathColor, (unsigned char)255 * invProgress), nvgTransRGBAf(module->pathColor, 0.f));
       nvgFillPaint(args.vg, p);
       nvgFill(args.vg);
     }
@@ -296,7 +330,7 @@ struct MemoryPadTrackpad : OpaqueWidget {
     nvgScissor(args.vg, 0.f, 0.f, box.size.x, box.size.y);
     nvgBeginPath(args.vg);
     nvgCircle(args.vg, puckDot.x, puckDot.y, 8.0);
-    nvgFillColor(args.vg, SCHEME_YELLOW);
+    nvgFillColor(args.vg, module->pathColor);
     nvgFill(args.vg);
 
     Widget::drawLayer(args, layer);
@@ -333,6 +367,21 @@ struct MemoryPadWidget : ModuleWidget {
     trackpad->_yParamId = MemoryPad::TRACKPAD_Y_PARAM;
     trackpad->module = module;
     addChild(trackpad);
+  }
+
+  void appendContextMenu(Menu *menu) override {
+    MemoryPad* module = static_cast<MemoryPad*>(this->module);
+    assert(module);
+
+    menu->addChild(new MenuSeparator());
+    menu->addChild(createMenuLabel("Path Color"));
+
+    for (const auto& path : module->pathColors) {
+      menu->addChild(createCheckMenuItem(path.color, "",
+          [=]() {return module->isSameColor(module->pathColor, path.scheme);},
+          [=]() {module->pathColor = path.scheme;}
+      ));
+    }
   }
 };
 
